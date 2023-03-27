@@ -1,0 +1,9 @@
+//pyramids are amazing! both in architectural and mathematical sense.
+function longestSlideDown (pyramid) {
+  for (var i = pyramid.length - 2; i > -1; i--) {
+    for (var j = 0; j < pyramid[i].length; j++) {
+      pyramid[i][j] += Math.max(pyramid[i + 1][j], pyramid[i + 1][j + 1]);
+    }
+  }
+  return pyramid[0][0];
+}

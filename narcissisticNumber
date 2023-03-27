@@ -1,0 +1,17 @@
+//A Narcissistic Number is a positive number which is the sum of its own digits,
+//each raised to the power of the number of digits in a given base. 
+//In this Kata, we will restrict ourselves to decimal (base 10).
+function narcissistic(value) {
+  
+  let number = value.toString();
+  number = [...number]
+  
+  let length = number.length;
+    
+  let sum = 0;
+  number.forEach((e) => {
+   sum += Math.pow(Number(e), length)
+  });
+  
+  return (sum === value);
+}
